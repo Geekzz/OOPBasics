@@ -4,7 +4,17 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            try
+            {
+                // det går inte att accessa privata fields direkt, så vi accessar dem med get istället
+                Person person = new Person();
+                person.Age = 10;
+                person.Weight = -1;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
     }
 }
