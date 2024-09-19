@@ -11,7 +11,8 @@
                 //person.Age = 10;
                 //person.Weight = -1;
                 //PersonHandler handler = new PersonHandler();
-                //handler.CreatePerson(33, "Johan", "Ahlsson", 185, 75);
+
+                //handler.CreatePerson(...)
                 //handler.CreatePerson(23, "", "hejfdsalpfdsafpdsaåfdlspåa", -1, 0);
 
                 List<UserError> errors = new List<UserError>();
