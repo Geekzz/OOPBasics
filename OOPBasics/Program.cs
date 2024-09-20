@@ -95,7 +95,7 @@
                     animal.DoSound();
 
                     // animal.TestReturnString(); <---- Animal != Dog (utan virtual och override)
-                    // Console.WriteLine(animal.TestReturnString()); // nu med virtual och override går det
+                     Console.WriteLine(animal.TestReturnString()); // nu med virtual och override går det
 
                     // om man vill printa alla hund kan man göra här: 
                     //if (animal is Dog)

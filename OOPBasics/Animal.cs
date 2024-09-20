@@ -21,7 +21,7 @@ namespace OOPBasics
 
         public virtual string TestReturnString() 
         {
-            return "";
+            return string.Empty;
         }
     }
 
