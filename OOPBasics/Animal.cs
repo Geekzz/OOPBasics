@@ -13,11 +13,21 @@ namespace OOPBasics
         protected double weight { get; set; }
 
         public abstract void DoSound();
+
+        public virtual string Stats()
+        {
+            return $"{name} is {age} old and weighs {weight} kg";
+        }
+
+        public virtual string TestReturnString() 
+        {
+            return "";
+        }
     }
 
     public class Horse : Animal
     {
-        string breed { get; set; }
+        public string breed { get; set; }
         public Horse()
         {
             name = "Zeke";
@@ -29,11 +39,16 @@ namespace OOPBasics
         {
             Console.WriteLine($"{name}, a {breed} breed, is neighing...");
         }
+
+        public override string Stats()
+        {
+            return $"{name} is {age} old, weighs {weight} and race is {breed}";
+        }
     }
 
     public class Dog : Animal
     {
-        string favoriteToy { get; set; }
+        public string favoriteToy { get; set; }
         public Dog()
         {
             name = "Paul";
@@ -46,11 +61,21 @@ namespace OOPBasics
         {
             Console.WriteLine($"{name} is woofing!");
         }
+
+        public override string Stats()
+        {
+            return $"{name} is {age} old, weighs {weight} and favorite toy is {favoriteToy}";
+        }
+
+        public override string TestReturnString()
+        {
+            return "Hejsan från hund!";
+        }
     }
 
     public class Hedgehog : Animal
     {
-        int numberOfSpikes {  get; set; }
+        public int numberOfSpikes {  get; set; }
         public Hedgehog()
         {
             name = "Spike";
@@ -63,11 +88,16 @@ namespace OOPBasics
         {
             Console.WriteLine($"{name} makes a snorting sound...");
         }
+
+        public override string Stats()
+        {
+            return $"{name} is {age} old, weighs {weight} and number of spikes is {numberOfSpikes}";
+        }
     }
 
     public class Worm : Animal
     {
-        bool isPoisionOus { get; set; }
+        public bool isPoisionOus { get; set; }
         public Worm()
         {
             name = "Fizz";
@@ -80,11 +110,16 @@ namespace OOPBasics
         {
             Console.WriteLine($"{name} is quiet...");
         }
+
+        public override string Stats()
+        {
+            return $"{name} is {age} old, weighs {weight} and is poisionous {isPoisionOus}";
+        }
     }
 
     public class Bird : Animal
     {
-        protected double spanOfWings { get; set; }
+        public double spanOfWings { get; set; }
         public Bird()
         {
             name = "Chirpy";
@@ -97,11 +132,16 @@ namespace OOPBasics
         {
             Console.WriteLine($"{name} is chirping");
         }
+
+        public override string Stats()
+        {
+            return $"{name} is {age} old, weighs {weight} and got {spanOfWings} meter of span wings";
+        }
     }
 
     public class Wolf : Animal
     {
-        string packName { get; set; }
+        public string packName { get; set; }
         public Wolf()
         {
             name = "Luna";
@@ -114,11 +154,16 @@ namespace OOPBasics
         {
             Console.WriteLine($"{name} is hoooooowling");
         }
+
+        public override string Stats()
+        {
+            return $"{name} is {age} old, weighs {weight} and pack name is {packName}";
+        }
     }
 
     public class Pelican : Bird
     {
-        protected double beakLength { get; set; }
+        public double beakLength { get; set; }
         public Pelican()
         {
             name = "Percy";
@@ -132,11 +177,12 @@ namespace OOPBasics
         {
             Console.WriteLine($"{name} is squawking");
         }
+
     }
 
     public class Flamingo : Bird
     {
-        protected double legLength { get; set; }
+        public double legLength { get; set; }
 
         public Flamingo()
         {
@@ -150,7 +196,7 @@ namespace OOPBasics
 
     public class Swan : Bird
     {
-        protected double neckLength { get; set; }
+        public double neckLength { get; set; }
 
         public Swan()
         {
@@ -168,17 +214,6 @@ namespace OOPBasics
 
     public class Wolfman: Wolf, IPerson
     {
-        // 13 F:
-        // om vi vill ge en ny attribut till alla fåglar kan vi lägga en ny set get attribut till Bird abstrakt klassen
-        // och då kan alla subklasser använda attributen
-
-        // 14 F:
-        // lite samma sak, vi lägger in en ny set get till Animal abstrakt klassen
-
-        // men en abstrakt klass gör att det nya attributet inte behöver implementeras (valfritt),
-        // medan ett interface kräver att det implementeras, så frågan är: kräver vi att attributen
-        // implementeras? i så fall, använd ett interface, och klasser som ärver från det måste implementera
-        // attributen. om inte, kör med en abstrakt klass
 
         public Wolfman()
         {
